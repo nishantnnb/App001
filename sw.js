@@ -1,4 +1,4 @@
-const CACHE_NAME = 'spectrolipi-cache-v2';
+const CACHE_NAME = 'spectrolipi-cache-v3';
 const urlsToCache = [
   '/App001/',
   '/App001/index.html',

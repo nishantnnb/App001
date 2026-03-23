@@ -11,8 +11,23 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script>
+      // 1. Rescue script to break out of the broken offline cache trap
+      if ('caches' in window) {
+        caches.keys().then(names => {
+          names.forEach(name => caches.delete(name));
+        });
+      }
+
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
+          // 2. Unregister broken service workers first
+          navigator.serviceWorker.getRegistrations().then(registrations => {
+            for (let registration of registrations) {
+              registration.unregister();
+            }
+          });
+
+          // 3. Register the new working service worker
           navigator.serviceWorker.register('/App001/sw.js')
             .then(registration => {
               console.log('ServiceWorker registration successful with scope: ', registration.scope);
