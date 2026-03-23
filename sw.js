@@ -1,8 +1,8 @@
 const CACHE_NAME = 'spectrolipi-cache-v1';
 const urlsToCache = [
-  './',
-  './index.html',
-  './manifest.json'
+  '/App001/',
+  '/App001/index.html',
+  '/App001/manifest.json'
 ];
 
 // Install event - cache core files
