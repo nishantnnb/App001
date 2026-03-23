@@ -1,0 +1,7 @@
+{
+  "name": "Spectrolipi",
+  "description": "A high-fidelity audio player with real-time spectrogram visualization and immersive neon aesthetics.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
